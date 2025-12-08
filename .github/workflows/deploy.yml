@@ -22,34 +22,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies (if package.json exists)
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-          fi
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Build or copy files
-        run: |
-          # Clean previous output
-          rm -rf dist
-          mkdir dist
+      - name: Build Astro site
+        run: npm run build
 
-          if [ -f package.json ]; then
-            echo "Detected package.json → Running build"
-            npm run build
-          else
-            echo "Static site detected → Copying files"
-            # Copy everything except dist/, .git/, .github/
-            find . -maxdepth 1 \
-              ! -name "dist" \
-              ! -name ".git" \
-              ! -name ".github" \
-              ! -name "." \
-              -exec cp -R {} dist/ \;
-          fi
-
-          echo "Dist directory contents:"
-          ls -al dist
+      - name: Verify build output
+        run: ls -al dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -61,8 +41,6 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

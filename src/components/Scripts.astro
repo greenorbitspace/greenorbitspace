@@ -11,23 +11,20 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
-<script src="/src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" is:inline></script>
-<script src="/src/assets/vendor/php-email-form/validate.js" is:inline></script>
-<script src="/src/assets/vendor/aos/aos.js" is:inline></script>
-<script src="/src/assets/vendor/swiper/swiper-bundle.min.js" is:inline></script>
-<script src="/src/assets/vendor/glightbox/js/glightbox.min.js" is:inline></script>
-<script src="/src/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" is:inline></script>
-<script src="/src/assets/vendor/isotope-layout/isotope.pkgd.min.js" is:inline></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js" is:inline></script>
+<script src="/vendor/php-email-form/validate.js" is:inline></script>
+<script src="/vendor/aos/aos.js" is:inline></script>
+<script src="/vendor/swiper/swiper-bundle.min.js" is:inline></script>
+<script src="/vendor/glightbox/js/glightbox.min.js" is:inline></script>
+<script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js" is:inline></script>
+<script src="/vendor/isotope-layout/isotope.pkgd.min.js" is:inline></script>
 
 <!-- Initialise Vendor Plugins -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     // AOS Animations
     if (window.AOS) {
-      AOS.init({
-        duration: 800,
-        once: true
-      });
+      AOS.init({ duration: 800, once: true });
     }
 
     // GLightbox
@@ -35,9 +32,8 @@
       GLightbox({ selector: '.glightbox' });
     }
 
-    // Swiper (if used)
+    // Swiper
     if (window.Swiper) {
-      // Example – customise depending on your site needs
       new Swiper('.swiper', {
         loop: true,
         autoplay: { delay: 5000 },
@@ -48,4 +44,4 @@
 </script>
 
 <!-- Main Template JS -->
-<script src="/src/assets/js/main.js" is:inline></script>
+<script src="/js/main.js" is:inline></script>

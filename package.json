@@ -9,7 +9,7 @@
   "homepage": "https://greenorbit.space",
   "repository": {
     "type": "git",
-    "url": "https://github.com/greenorbitspace/web.git"
+    "url": "https://github.com/greenorbitspace/greenorbitspace.git"
   },
   "scripts": {
     "dev": "astro dev",
