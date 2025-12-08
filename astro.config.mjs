@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://greenorbitspace.github.io',
+  site: 'https://greenorbit.space',
   base: '/',
   integrations: [
     alpinejs(),
