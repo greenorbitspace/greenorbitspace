@@ -12,6 +12,7 @@ import blog from "../../data/schema/blog.json";
 
 import getWebsiteSchemaJSON from "../Schema/WebsiteSchema";
 import getWebPageSchema, { WebPageSchemaProps } from "../Schema/WebPageSchema";
+import getLocalBusinessSchema, { LocalBusinessSchemaProps } from "../Schema/LocalBusinessSchema";
 
 /**
  * Generate full JSON-LD global schema for site
@@ -54,14 +55,14 @@ export function getGlobalSchema(pageData?: WebPageSchemaProps): Record<string, a
   const orgNode: Record<string, any> = {
     "@type": "Organization",
     "@id": "https://greenorbit.space/#organization",
-    name: "Green Orbit Digital",
+    name: "Green Orbit Space Communications & PR",
     url: "https://greenorbit.space",
-    logo: "https://greenorbit.space/logos/organisations/greenorbit.png",
+    logo: "https://greenorbit.space/logos/organisations/greenorbit-space.png",
     foundingDate: "2023-10-12",
-    legalName: "Green Orbit Digital Ltd",
+    legalName: "Impact Orbit Creative Group",
     description:
-      "Green Orbit Digital is a Leicester-based agency specialising in sustainable marketing for the space sector.",
-    slogan: "Sustainable marketing for the space sector.",
+      "Green Orbit Space Communications & PR, part of Impact Orbit Creative Group, helps space organisations communicate complex missions with clarity, purpose, and impact.",
+    slogan: "Communicating space missions with clarity and impact.",
     founder: safeFounders.length ? safeFounders : undefined,
     contactPoint: safeContact.contactPoint?.length ? safeContact.contactPoint : undefined,
     address: Object.keys(safeContact.address || {}).length ? safeContact.address : undefined,
@@ -77,23 +78,20 @@ export function getGlobalSchema(pageData?: WebPageSchemaProps): Record<string, a
     isAccessibleForFree: true
   };
 
-  // Website schema (from JSON function)
+  // Website schema
   let websiteSchemaGraph: Record<string, any>[] = [];
   try {
     const websiteSchemaJSON = getWebsiteSchemaJSON({
       url: pageData?.url || "https://greenorbit.space",
-      title: pageData?.title || "Green Orbit Digital — Sustainable Marketing for the Space Sector",
+      title: pageData?.title || "Green Orbit Space Communications & PR",
       description: pageData?.description,
       featuredImage: pageData?.featuredImage
     });
-
-    // JSON.parse may throw if getWebsiteSchemaJSON returns invalid string
     const parsed = typeof websiteSchemaJSON === "string" ? JSON.parse(websiteSchemaJSON) : websiteSchemaJSON;
     if (parsed?.["@graph"]) {
       websiteSchemaGraph = parsed["@graph"].map((node: any) => {
-        // Force logo URL consistency
         if (node["@id"]?.includes("#logo") || node["@type"] === "ImageObject") {
-          return { ...node, url: "https://greenorbit.space/logos/organisations/greenorbit.png" };
+          return { ...node, url: "https://greenorbit.space/logos/organisations/greenorbit-space.png" };
         }
         return node;
       });
@@ -102,17 +100,39 @@ export function getGlobalSchema(pageData?: WebPageSchemaProps): Record<string, a
     console.warn("Failed to parse WebsiteSchema JSON:", e);
   }
 
+  // LocalBusiness schema
+  const localBusinessSchema = getLocalBusinessSchema({
+    url: "https://greenorbit.space",
+    name: "Green Orbit Space Communications & PR",
+    description: orgNode.description,
+    image: "https://greenorbit.space/logos/organisations/greenorbit-space.png",
+    telephone: "+44 116 4830155",
+    email: "hello@greenorbit.space",
+    address: {
+      streetAddress: "Leicester",
+      addressLocality: "Leicester",
+      addressRegion: "Leicestershire",
+      postalCode: "LE4 5NU",
+      addressCountry: "GB"
+    },
+    geo: { latitude: 52.6369, longitude: -1.1398 },
+    openingHours: "Mo-Fr 09:00-17:00",
+    parentOrganizationName: "Impact Orbit Creative Group",
+    parentOrganizationUrl: "https://impactorbit.com",
+    socialLinks: sameAsLinks
+  });
+
   // Dynamic WebPage schema node
   const webPageSchema = getWebPageSchema(
     pageData || {
       url: "https://greenorbit.space",
-      title: "Green Orbit Digital — Sustainable Marketing for the Space Sector",
-      featuredImage: "https://greenorbit.space/logos/organisations/greenorbit.png"
+      title: "Green Orbit Space Communications & PR",
+      featuredImage: "https://greenorbit.space/logos/organisations/greenorbit-space.png"
     }
   );
 
-  // Combine all schemas into one array
-  return [...websiteSchemaGraph, orgNode, webPageSchema];
+  // Return combined JSON-LD graph
+  return [...websiteSchemaGraph, orgNode, localBusinessSchema, webPageSchema];
 }
 
 export default getGlobalSchema;

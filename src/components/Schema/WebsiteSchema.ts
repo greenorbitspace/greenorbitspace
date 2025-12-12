@@ -16,9 +16,9 @@ export interface WebsiteSchemaProps {
 export default function getWebsiteSchema({
   url,
   title,
-  description = "Green Orbit Digital is a sustainable marketing agency focused on the space sector, delivering SEO, digital strategy, and data-driven campaigns.",
-  featuredImage = "https://greenorbit.space/logos/organisations/greenorbit.png",
-  datePublished = "2023-10-12",
+  description = "Green Orbit Space Communications & PR, part of Impact Orbit Creative Group, delivers strategic communications, narrative development, and PR campaigns for space organisations and initiatives.",
+  featuredImage = "https://greenorbit.space/logos/organisations/greenorbit-space.png",
+  datePublished = "2025-01-01",
   dateModified = new Date().toISOString().split("T")[0],
   breadcrumbs
 }: WebsiteSchemaProps) {
@@ -41,12 +41,12 @@ export default function getWebsiteSchema({
   const baseOrganization = {
     "@type": "Organization",
     "@id": "https://greenorbit.space/#organization",
-    name: "Green Orbit Digital",
-    legalName: "Green Orbit Digital Ltd",
+    name: "Green Orbit Space Communications & PR",
+    legalName: "Impact Orbit Creative Group Co.",
     url: "https://greenorbit.space",
     logo: { "@id": "https://greenorbit.space/#logo" },
-    image: "https://greenorbit.space/favicon.svg",
-    description: "A sustainable marketing agency specialising in the space sector, delivering SEO, digital strategy, and data-driven campaigns aligned to environmental best practices.",
+    image: "https://greenorbit.space/logos/organisations/greenorbit-space.png",
+    description: "Part of Impact Orbit Creative Group, Green Orbit Space Communications & PR helps space organisations communicate complex missions with clarity, purpose, and impact through PR, media campaigns, and stakeholder engagement.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Leicester",
@@ -64,7 +64,7 @@ export default function getWebsiteSchema({
       }
     ],
     sameAs: [
-      "https://www.linkedin.com/company/greenorbitdigital/",
+      "https://www.linkedin.com/company/greenorbitspace/",
       "https://x.com/greenorbitspace",
       "https://www.instagram.com/greenorbitspace/"
     ]
@@ -77,8 +77,8 @@ export default function getWebsiteSchema({
         "@type": "WebSite",
         "@id": "https://greenorbit.space/#website",
         url: "https://greenorbit.space",
-        name: "Green Orbit Digital",
-        alternateName: "Green Orbit Digital Ltd",
+        name: "Green Orbit Space Communications & PR",
+        alternateName: "Impact Orbit Creative Group",
         publisher: { "@id": baseOrganization["@id"] },
         potentialAction: {
           "@type": "SearchAction",
@@ -90,7 +90,7 @@ export default function getWebsiteSchema({
       {
         "@type": "LocalBusiness",
         "@id": "https://greenorbit.space/#localbusiness",
-        name: "Green Orbit Digital",
+        name: "Green Orbit Space Communications & PR",
         url: "https://greenorbit.space",
         image: featuredImage,
         priceRange: "$$",
@@ -111,8 +111,8 @@ export default function getWebsiteSchema({
       {
         "@type": "ImageObject",
         "@id": "https://greenorbit.space/#logo",
-        url: "https://greenorbit.space/logos/organisations/greenorbit.png",
-        caption: "Green Orbit Digital Logo"
+        url: "https://greenorbit.space/logos/organisations/greenorbit-space.png",
+        caption: "Green Orbit Space Communications & PR Logo"
       }
     ]
   };
