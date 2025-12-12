@@ -1,45 +1,58 @@
 ---
 --- 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Green Orbit Space Communications and PR</h1>
-      </a>
+    <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+      <h1 class="sitename">Green Orbit Space Communications and PR</h1>
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="/#hero" class="active">Home</a></li>
-          <li class="dropdown"><a href="/#about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="https://impactorbit.co/about">Impact Orbit Creative Group</a></li>
-              <li><a href="/about/our-team">Our Team</a></li>
-              <li><a href="https://impactorbit.co/careers">Careers</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="/#services">Services<i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
+    <nav id="navmenu" class="navmenu" aria-label="Main Navigation">
+      <ul>
+        <li><a href="/index" class="active">Home</a></li>
+
+        <li class="dropdown">
+          <a href="/#about">
+            <span>About</span> 
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="https://impactorbit.co/about">Impact Orbit Creative Group</a></li>
+            <li><a href="/about/our-team">Our Team</a></li>
+            <li><a href="https://impactorbit.co/careers">Careers</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="/index#services">
+            <span>Services</span> 
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul class="dropdown-menu">
                 <li><a href="/services/strategy">Strategy</a></li>
                 <li><a href="/services/content">Content</a></li>
                 <li><a href="/services/engagement">Engagement</a></li>
                 <li><a href="/services/insights">Insights</a></li>
-              </ul>
-          </li>
-          <li><a href="/work">Work</a></li>
-          <li class="dropdown"><a href="/insights">Insights<i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/news">News</a></li>
-              <li><a href="/resources">Resources</a></li>
-              <li><a href="/events">Events</a></li>
-              </ul>    
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+          </ul>
+        </li>
 
-      <a class="btn-getstarted" href="/#contact"><strong>CONTACT US</strong></a>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/index#contact">Contact</a></li>
 
-    </div>
-  </header>
+        <!-- CTA placed inside navigation on mobile -->
+        <li class="mobile-cta d-xl-none">
+          <a class="btn-getstarted-mobile" href="#contact">CONTACT US</a>
+        </li>
+      </ul>
+
+      <!-- Mobile toggle -->
+      <i class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle Navigation"></i>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a class="btn-getstarted d-none d-xl-inline-flex" href="#contact">
+      <strong>CONTACT US</strong>
+    </a>
+
+  </div>
+</header>
