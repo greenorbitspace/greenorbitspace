@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
+import Hero from '../components/Hero.astro';
 import ToolsList from '../components/ToolsList.jsx';
 import tools from '../data/tools.js';
 
@@ -17,7 +17,7 @@ const sortedTools = tools.slice().sort((a, b) => a.name.localeCompare(b.name));
 
     <!-- Hero Section -->
     <div class="max-w-6xl mx-auto px-4">
-      <HeroSection 
+      <Hero 
         title="Tools" 
         description="Explore the digital tools, platforms, and resources we use and recommend for sustainable marketing and space industry innovation."  
       />

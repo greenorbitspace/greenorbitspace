@@ -6,21 +6,36 @@
     "alternateName": "rjmlaird",
     "jobTitle": "Founder & Director",
     "honorificSuffix": "CMktr",
-    "description": "Ryan Laird is the Founder and Director of Green Orbit Digital, a Leicester-based agency specialising in sustainable marketing for the space sector. With over a decade of experience in the space industry, he is a Chartered Marketer and a leading voice in digital sustainability.",
+    "description": "Ryan Laird is the Founder and Director of Green Orbit Space, a communications and PR consultancy specialising in mission-driven storytelling and sustainable marketing for the space sector. With more than a decade of industry experience, he is a Chartered Marketer and leading advocate for sustainability and responsible communications in space.",
     "image": "https://greenorbit.space/images/founders/ryan-laird.jpg",
-    "url": "https://greenorbit.space/about/founders/ryan-laird",
+    "url": "https://greenorbit.space/about/ryan-laird",
     "email": "mailto:ryan@greenorbit.space",
-    "gender": "Male",
-    "nationality": "British",
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "University of Leicester"
-    },
+
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Leicester"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of the West of England (UWE Bristol)"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Loughborough College"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "International Space University"
+      }
+    ],
+
     "worksFor": {
       "@type": "Organization",
-      "name": "Green Orbit Digital",
+      "name": "Green Orbit Space Communications & PR",
       "url": "https://greenorbit.space"
     },
+
     "memberOf": [
       {
         "@type": "Organization",
@@ -35,55 +50,54 @@
         "roleName": "Chartered Marketer"
       }
     ],
+
     "sameAs": [
       "https://linkedin.com/in/rjmlaird",
-      "https://github.com/rjmlaird",
       "https://twitter.com/rjmlaird",
+      "https://github.com/rjmlaird",
       "https://www.instagram.com/rjmlaird"
     ],
+
     "knowsAbout": [
+      "Space Communications",
+      "Public Relations",
       "Sustainable Marketing",
-      "Digital Sustainability",
-      "Space Industry",
+      "Brand Strategy",
+      "Stakeholder Engagement",
+      "Mission Storytelling",
       "SEO",
-      "Content Marketing",
-      "Email Marketing",
-      "HubSpot",
-      "Open SDG",
-      "Web Accessibility",
-      "Google Analytics",
+      "Content Strategy",
+      "Digital Sustainability",
       "Technical SEO",
+      "Web Accessibility",
       "Sustainable Development Goals"
     ],
+
     "affiliation": {
       "@type": "Organization",
       "name": "The Sustainable Space Podcast",
       "url": "https://greenorbit.space/podcast"
     },
+
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "Sustainable Marketing Consultant",
+      "name": "Communications & PR Consultant",
       "skills": [
-        "Digital Strategy",
-        "Campaign Management",
+        "Strategic Communications",
+        "Narrative Development",
+        "Campaign Leadership",
         "Stakeholder Engagement",
-        "Brand Development",
+        "Brand Building",
         "Thought Leadership"
       ]
     },
+
     "award": [
       "Chartered Marketer (CIM)",
-      "UKSEDS National Student Space Conference Speaker",
-      "Sustainable Business Alliance Café Facilitator"
+      "Speaker at the UKSEDS National Student Space Conference",
+      "Facilitator at the Sustainable Business Alliance Café"
     ],
-    "knowsLanguage": ["en-GB"],
-    "birthPlace": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "UK",
-        "addressLocality": "Leicester"
-      }
-    }
+
+    "knowsLanguage": ["en-GB"]
   }
 ]
