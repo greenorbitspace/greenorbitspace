@@ -1,5 +1,7 @@
 ---
-import faqs from '/data/faqs.json';
+// src/components/FAQs.astro
+const res = await fetch('/data/faqs.json');
+const faqs = await res.json();
 ---
 <section class="faq-9 faq section" id="faq">
   <div class="container">
