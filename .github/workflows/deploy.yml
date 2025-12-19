@@ -30,6 +30,7 @@ jobs:
 
       - name: Build or copy files
         run: |
+          # Clean previous output
           rm -rf dist
           mkdir dist
 
@@ -38,6 +39,7 @@ jobs:
             npm run build
           else
             echo "Static site detected → Copying files"
+            # Copy everything except dist/, .git/, .github/
             find . -maxdepth 1 \
               ! -name "dist" \
               ! -name ".git" \
@@ -45,9 +47,6 @@ jobs:
               ! -name "." \
               -exec cp -R {} dist/ \;
           fi
-
-          # Ensure .nojekyll exists for Astro
-          touch dist/.nojekyll
 
           echo "Dist directory contents:"
           ls -al dist
@@ -62,6 +61,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
