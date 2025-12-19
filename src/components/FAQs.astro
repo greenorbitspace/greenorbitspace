@@ -1,7 +1,6 @@
 ---
 // src/components/FAQs.astro
-const res = await fetch('/data/faqs.json');
-const faqs = await res.json();
+import faqs from '~/data/schema/faqs.json';
 ---
 <section class="faq-9 faq section" id="faq">
   <div class="container">
@@ -21,13 +20,17 @@ const faqs = await res.json();
           {faqs.length > 0 ? faqs.map((faq, i) => (
             <div class={`faq-item${i === 0 ? ' faq-active' : ''}`} key={i}>
               <h3>
-                <button type="button" class="faq-toggle" aria-expanded={i === 0 ? "true" : "false"}>
+                <button
+                  type="button"
+                  class="faq-toggle"
+                  aria-expanded={i === 0 ? "true" : "false"}
+                >
                   {faq.question} <i class="bi bi-chevron-right"></i>
                 </button>
               </h3>
               <div class="faq-content">
                 <p>{faq.answer}</p>
-                {faq.links && faq.links.length > 0 && (
+                {faq.links?.length > 0 && (
                   <ul class="faq-links">
                     {faq.links.map((link, j) => (
                       <li key={j}>
