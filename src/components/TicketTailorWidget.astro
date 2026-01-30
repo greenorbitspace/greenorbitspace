@@ -1,0 +1,37 @@
+---
+const {
+  url = "https://www.tickettailor.com/all-tickets/greenorbitacademy/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+} = Astro.props;
+---
+
+<div class="tt-widget">
+  <div class="tt-widget-fallback">
+    <p>
+      <a href={url} target="_blank" rel="noopener">
+        View and book upcoming events
+      </a>
+      <br />
+      <small>
+        <a
+          href="https://www.tickettailor.com?rf=wdg_224836"
+          class="tt-widget-powered"
+        >
+          Powered by Ticket Tailor
+        </a>
+      </small>
+    </p>
+  </div>
+
+  <!-- IMPORTANT: client-side execution -->
+  <script
+    is:inline
+    src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+    data-url={url}
+    data-type="inline"
+    data-inline-minimal="false"
+    data-inline-show-logo="true"
+    data-inline-bg-fill="true"
+    data-inline-inherit-ref-from-url-param=""
+    data-inline-ref="website_widget"
+  ></script>
+</div>
